@@ -105,7 +105,7 @@ body{
     transition: transform 0.2s ease;
 }
 
-.settings:hover .menu{
+.settings.show .menu{
     transform: scale(1);
 }
 
@@ -148,14 +148,14 @@ body{
     max-width: 400px;
 }
 
-.popup-box, .popup-box .popup{
-    opacity: 0;
-    pointer-events: none;
-}
-
 .popup-box.show, .popup-box .popup{
     opacity: 1;
     pointer-events: auto;
+}
+
+.popup-box, .popup-box .popup{
+    opacity: 0;
+    pointer-events: none;
 }
 
 .popup .content{

@@ -35,7 +35,7 @@ function showNotes()
             <div class="bottom-content">
                 <span>${note.date}</span>
                 <div class="settings">
-                    <i class="uil uil-ellipsis-h"></i>
+                    <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
                     <ul class="menu">
                         <li><i class="uil uil-pen"></i>Editer</li>
                         <li><i class="uil uil-trash"></i>Supprimer</li>
@@ -47,6 +47,18 @@ function showNotes()
     });
 }
 showNotes();
+
+function showMenu(elem)
+{
+    elem.parentElement.classList.add("show");
+    document.addEventListener("click", e =>
+    {
+        if(e.target.tagName != "I" || e.target != elem)
+        {
+            elem.parentElement.classList.remove("show");
+        }
+    });
+}
 
 addBtn.addEventListener("click", e =>
 {
