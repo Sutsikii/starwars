@@ -153,6 +153,11 @@ body{
     pointer-events: none;
 }
 
+.popup-box.show, .popup-box .popup{
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .popup .content{
     background: #fff;
     border-radius: 5px;
