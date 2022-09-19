@@ -24,7 +24,7 @@ closeIcon.addEventListener("click", () =>
 function showNotes()
 {
     document.querySelectorAll(".note").forEach(note => note.remove());
-    notes.forEach((note) =>
+    notes.forEach((note, index) =>
     {
         let liTag = `        
         <li class="note">
@@ -38,7 +38,7 @@ function showNotes()
                     <i onclick="showMenu(this)" class="uil uil-ellipsis-h"></i>
                     <ul class="menu">
                         <li><i class="uil uil-pen"></i>Editer</li>
-                        <li><i class="uil uil-trash"></i>Supprimer</li>
+                        <li onclick="deleteNote(${index})"><i class="uil uil-trash"></i>Supprimer</li>
                     </ul>
                 </div>
             </div>
@@ -47,6 +47,15 @@ function showNotes()
     });
 }
 showNotes();
+
+function deleteNote(noteId)
+{
+    notes.splice(noteId, 1); // Enleve la note du tableau
+    // Sauvgarde
+    localStorage.setItem("notes", JSON.stringify(notes));
+    showNotes();
+
+}
 
 function showMenu(elem)
 {
