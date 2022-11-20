@@ -54,7 +54,6 @@ function deleteNote(noteId)
     // Sauvgarde
     localStorage.setItem("notes", JSON.stringify(notes));
     showNotes();
-
 }
 
 function showMenu(elem)
